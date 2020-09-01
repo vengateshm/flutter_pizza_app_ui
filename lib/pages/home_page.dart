@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pizza_app_ui/models/pizza_data.dart';
+import 'package:flutter_pizza_app_ui/pages/detail_page.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
 class HomePage extends StatelessWidget {
@@ -159,7 +160,10 @@ class PizzaItem extends StatelessWidget {
     return Row(
       children: <Widget>[
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DetailPage(_pizza)));
+          },
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 10),
             padding: EdgeInsets.symmetric(vertical: 35, horizontal: 20),
